@@ -1,5 +1,6 @@
-openresty-dev:
+openresty-dev-env:
 	docker-compose up -d openresty
+openresty-dev: openresty-dev-env
 	docker-compose exec -- openresty bash -c 'cd /opt/opentelemetry-lua && luarocks make && nginx -s reload'
 
 openresty-test-e2e:
