@@ -21,5 +21,11 @@ jobs:
       - name: Start containers
         run: make openresty-dev DOCKER_COMPOSE_EXEC_OPTIONS="-T"
 
-      - name: Run tests
+      - name: Run test-e2e-trace-context
+        run: make openresty-unit-test DOCKER_COMPOSE_EXEC_OPTIONS="-T"
+
+      - name: Run openresty-test-e2e-trace-context
         run: make openresty-test-e2e-trace-context DOCKER_COMPOSE_EXEC_OPTIONS="-T"
+
+      - name: Run openresty-test-e2e
+        run: make openresty-test-e2e DOCKER_COMPOSE_EXEC_OPTIONS="-T"
