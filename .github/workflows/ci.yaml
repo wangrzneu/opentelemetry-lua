@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Start containers
-        run: make openresty-dev-env
+        run: make openresty-dev DOCKER_COMPOSE_EXEC_OPTIONS="-T"
 
       - name: Run tests
-        run: make openresty-test-e2e-trace-context
+        run: make openresty-test-e2e-trace-context DOCKER_COMPOSE_EXEC_OPTIONS="-T"
